@@ -24,6 +24,7 @@ function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
+   //Forma nueva: return array.map((el) => el +1)
    let nuevoArray = []
    for (let i = 0; i < array.length; i++) {
       nuevoArray.push(array[i] + 1);
@@ -61,13 +62,15 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
-   return array.includes (elemento);
+   return array.includes(elemento);
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+   //Nueva forma:
+   // return arrayOfNums.reduce((acumulador, item)=> acumulador + item, 0);
    let suma = 0;
    for (let i = 0; i < arrayOfNums.length; i++) {
       suma += arrayOfNums[i];
@@ -92,7 +95,7 @@ function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
-   return Math.max(...arrayOfNums);
+   return Math.max(...arrayOfNums);  //... se utiliza para pasar cada elemento del array arrayOfNums 
 }
 
 function multiplicarArgumentos() {
@@ -116,6 +119,9 @@ function multiplicarArgumentos() {
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   //Nueva forma optimizada:
+   // var mayorADieciocho = array.filter(elemDelArray => elemDelArray>18);
+   // return mayorADieciocho.length;
    let contador = 0;
    for (let i = 0; i < array.length; i++) {
       if (array[i] > 18) {
@@ -123,6 +129,9 @@ function cuentoElementos(array) {
       }
    }
    return contador;
+//Otra forma de hacerlo utilizando filter (nuevo)
+//const elementosMayores18 = array.filter(elemento => elemento > 18);
+//return elementosMayores18.length;
 }
 
 function diaDeLaSemana(numeroDeDia) {
